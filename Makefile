@@ -6,60 +6,68 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 16:01:52 by ebennace          #+#    #+#              #
-#    Updated: 2022/04/18 12:05:01 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/20 15:26:11 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-SRCS = ft_isdigit.c \
-	   ft_isalpha.c \
-	   ft_isalnum.c \
-	   ft_isascii.c \
-	   ft_isprint.c \
-	   ft_strlen.c \
-	   ft_memset.c \
-	   ft_bzero.c \
-	   ft_memcpy.c \
-	   ft_memmove.c \
-	   ft_strlcpy.c \
-	   ft_strlcat.c \
-	   ft_toupper.c \
-	   ft_tolower.c \
-	   ft_strchr.c \
-	   ft_strrchr.c \
-	   ft_strncmp.c \
-	   ft_memchr.c \
-	   ft_memcmp.c \
-	   ft_strnstr.c \
-	   ft_atoi.c \
-	   ft_calloc.c \
-	   ft_strdup.c \
-	   ft_putchar_fd.c \
-	   ft_putstr_fd.c \
-	   ft_putnbr_fd.c \
-	   ft_putendl_fd.c \
-	   ft_strjoin.c \
-	   ft_substr.c \
-	   ft_itoa.c \
-	   ft_strmapi.c \
-	   ft_striteri.c \
-	   ft_strtrim.c \
-	   ft_split.c \
+SRCS = check/ft_isdigit.c \
+	   check/ft_isalpha.c \
+	   check/ft_isalnum.c \
+	   check/ft_isascii.c \
+	   check/ft_isprint.c \
+	   check/ft_strlen.c \
+	   check/ft_strlcat.c \
+	   check/ft_strchr.c \
+	   check/ft_strrchr.c \
+	   check/ft_strncmp.c \
+	   check/ft_strnstr.c \
+	   check/ft_strtrim.c \
+	   check/ft_atol.c \
+	   conversion/ft_toupper.c \
+	   conversion/ft_tolower.c \
+	   conversion/ft_atoi.c \
+	   conversion/ft_strdup.c \
+	   conversion/ft_strjoin.c \
+	   conversion/ft_substr.c \
+	   conversion/ft_itoa.c \
+	   conversion/ft_strmapi.c \
+	   conversion/ft_striteri.c \
+	   conversion/ft_split.c \
+	   conversion/ft_strlcpy.c \
+	   memory/ft_memset.c \
+	   memory/ft_bzero.c \
+	   memory/ft_memcpy.c \
+	   memory/ft_memmove.c \
+	   memory/ft_memchr.c \
+	   memory/ft_memcmp.c \
+	   memory/ft_calloc.c \
+	   verbose/ft_putchar_fd.c \
+	   verbose/ft_putstr_fd.c \
+	   verbose/ft_putnbr_fd.c \
+	   verbose/ft_putendl_fd.c \
+	   get_next_line/get_next_line.c \
+	   printf/ft_check_format.c \
+	   printf/ft_hexa.c \
+	   printf/ft_printf.c \
+	   printf/utils.c \
+	   free/free.c \
+	   
 
 
 
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			= ft_lstnew.c \
-				  ft_lstsize.c \
-				  ft_lstadd_front.c \
-				  ft_lstlast.c \
-				  ft_lstadd_back.c \
-				  ft_lstdelone.c \
-				  ft_lstclear.c \
-				  ft_lstiter.c \
-				  ft_lstmap.c \
+BONUS			= chained_list/ft_lstnew.c \
+				  chained_list/ft_lstsize.c \
+				  chained_list/ft_lstadd_front.c \
+				  chained_list/ft_lstlast.c \
+				  chained_list/ft_lstadd_back.c \
+				  chained_list/ft_lstdelone.c \
+				  chained_list/ft_lstclear.c \
+				  chained_list/ft_lstiter.c \
+				  chained_list/ft_lstmap.c \
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 
@@ -74,7 +82,7 @@ $(NAME) : $(OBJS)
 all : $(NAME)
 
 clean :
-				/bin/rm -rf *.o
+				/bin/rm -rf $(OBJS)
 
 fclean : clean
 				/bin/rm -rf $(NAME)
