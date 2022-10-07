@@ -6,46 +6,53 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 17:44:40 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/20 13:35:39 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:03:57 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ *  copie string from start to nbr of char
+ * 
+ *  ex : "je suis la"
+ * 	start = 1 // e
+ *  len = 3 // u
+ *  result = e su;
+ * 
+ **/
 
 #include "../libft.h"
 
 char	*ft_copie(char *dest, char *s, int i, int len)
 {
-	int	a;
+	int	y;
 
-	a = 0;
-	while (a < (int)len)
+	y = 0;
+	while (y < len)
 	{
-		dest[a] = s[i];
+		dest[y] = s[i];
 		i++;
-		a++;
+		y++;
 	}
-	dest[a] = '\0';
+	dest[y] = '\0';
 	return (dest);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char *str, int start, int len)
 {
 	char	*dest;
-	int		i;
-	int		t;
+	int		size;
 
-	i = 0;
-	if (!s)
+	if (!str)
 		return (NULL);
-	t = ft_strlen(s);
-	if ((int)start >= t)
+	size = ft_strlen(str);
+	if (start >= size)
 		return (ft_strdup(""));
-	if (t - start < len)
-		len = t - (int)start;
+	if ((size - start) < len)
+		len = (size - start);
 	dest = malloc ((len + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
-	i = 0 + (int)start;
-	return (ft_copie((char *)dest, (char *)s, i, (int)len));
+	return (ft_copie(dest, str, start, len));
 }
 /*
 int main ()

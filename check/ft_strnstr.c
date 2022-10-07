@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 18:09:20 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/20 13:35:39 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:10:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (hay[i] != '\0' && i < len)
 	{
 		c = 0;
-		while (hay[i + c] != '\0' && little[c] != '\0'
+		while (hay[i + c] && little[c]
 			&& hay[i + c] == little[c] && i + c < len)
 			c++;
 		if (c == n_len)

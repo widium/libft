@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 16:01:52 by ebennace          #+#    #+#              #
-#    Updated: 2022/06/20 15:26:11 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/05 17:11:29 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ SRCS = check/ft_isdigit.c \
 	   check/ft_strnstr.c \
 	   check/ft_strtrim.c \
 	   check/ft_atol.c \
+	   check/same_str.c \
+	   array/join_array.c \
+	   array/array.c \
 	   conversion/ft_toupper.c \
 	   conversion/ft_tolower.c \
 	   conversion/ft_atoi.c \
@@ -46,12 +49,16 @@ SRCS = check/ft_isdigit.c \
 	   verbose/ft_putstr_fd.c \
 	   verbose/ft_putnbr_fd.c \
 	   verbose/ft_putendl_fd.c \
+	   verbose/print_array.c \
 	   get_next_line/get_next_line.c \
 	   printf/ft_check_format.c \
 	   printf/ft_hexa.c \
 	   printf/ft_printf.c \
 	   printf/utils.c \
+	   printf/ft_printf_fd.c \
 	   free/free.c \
+	   free/copy.c \
+	   free/copy_array.c \
 	   
 
 
@@ -74,20 +81,20 @@ BONUS_OBJS		= $(BONUS:.c=.o)
 FLAGS 			= -Wall -Wextra -Werror -I.
 
 $(NAME) : $(OBJS)
-				ar src  $(NAME) $(OBJS)
+				@ar src  $(NAME) $(OBJS)
 
 %.o: %.c
-	clang -c $(FLAGS) -o $@ $^
+	@clang -c $(FLAGS) -o $@ $^
 
 all : $(NAME)
 
 clean :
-				/bin/rm -rf $(OBJS)
+				@/bin/rm -rf $(OBJS)
 
 fclean : clean
-				/bin/rm -rf $(NAME)
+				@/bin/rm -rf $(NAME)
 
 re : fclean all
 
 bonus:			$(OBJS) $(BONUS_OBJS)
-						ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+						@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)

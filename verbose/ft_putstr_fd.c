@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 19:04:33 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/20 13:35:39 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:51:00 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *str, int fd)
 	if (!(str))
 		return ;
 	i = ft_strlen(str);
-	write (fd, str, i);
+	write(fd, str, i);
 }
 /*
 int main ()

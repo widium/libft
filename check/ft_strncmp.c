@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 17:58:19 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/20 15:29:04 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:31:37 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,24 @@ int	ft_strncmp(const char *first, const char *second, size_t size)
 		return ((unsigned char)first[i] - (unsigned char)second[i]);
 	return ((unsigned char)first[i - 1] - (unsigned char)second[i - 1]);
 }
+
+// int	ft_strncmp(const char *first, const char *second, size_t size)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	if ((int)size < 0)
+// 		size = ft_strlen(first);
+// 	while (first[i] && second[i] && i < (int)size)
+// 	{
+// 		if (first[i] != second[i])
+// 			return (first[i] - second[i]);
+// 		i++;
+// 	}
+// 	if (i != (int)size)
+// 		return (first[i] - second[i]);
+// 	return (first[i - 1] - second[i - 1]);
+// }
 /*
 int main ()
 {
